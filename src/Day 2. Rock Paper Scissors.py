@@ -16,8 +16,6 @@ def score_hand(hand):
         score = score + 3
     elif winMap[u] == opp:
             score = score + 6
-    else: 
-        pass
     
     return score 
 
@@ -36,5 +34,6 @@ def newHand(hand):
 handsPart1 = [[mappingOpponnents[hand[0]], mappingHand[hand[1]]] for hand in hands]
 print(sum([score_hand(hand) for hand in handsPart1]))
 
+# Deel 2
 handsPart2 = [newHand(hand) for hand in hands]
 print(sum([score_hand(hand) for hand in handsPart2]))
