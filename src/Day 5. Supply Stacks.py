@@ -7,10 +7,7 @@ procedures = [list(map(int,re.findall(r'\d+', line))) for line in Input][:-1]
 stacks = [list(string) for string in ["HCR", "BJHLSF", "RMDHJTQ", "SGRHZBJ", "RPFZTDCB", "THCG", "SNVZBPWL", "RJQGC", "LDTRHPFS"]]
 
 # Deel 1 
-for n, fro, to in procedures:
-    for step in range(n):
-        stacks[to-1].append(stacks[fro-1].pop())
-        
+[[stacks[to-1].append(stacks[fro-1].pop()) for step in range(n)] for n, fro, to in procedures]
 print("".join([stack[-1] for stack in stacks]))
 
 # Deel 2
