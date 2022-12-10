@@ -1,6 +1,6 @@
 import re 
 
-Input = open("data/dag 5. input.txt", "r").read().split("\n\n")[1].split("\n")
+Input = open("data/dag 05. input.txt", "r").read().split("\n\n")[1].split("\n")
 procedures = [list(map(int,re.findall(r'\d+', line))) for line in Input][:-1]
 
 # handmatig de start stacks in list gezet. Aangezien parsen meer tijd kost

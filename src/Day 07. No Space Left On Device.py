@@ -1,6 +1,6 @@
 from collections import defaultdict
 
-Input = open("data/dag 7. input.txt", "r").read().split("\n")[:-1]
+Input = open("data/dag 07. input.txt", "r").read().split("\n")[:-1]
 
 def run_command():
     global lineNumber

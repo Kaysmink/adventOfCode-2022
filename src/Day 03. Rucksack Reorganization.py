@@ -1,4 +1,4 @@
-Input = open("data/dag 3. input.txt", "r").read().split("\n")[:-1]
+Input = open("data/dag 03. input.txt", "r").read().split("\n")[:-1]
 
 # Deel 1
 compartments = [[list(line[0:len(line)//2]), list(line[len(line)//2:])] for line in Input]

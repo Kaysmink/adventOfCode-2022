@@ -1,4 +1,4 @@
-Input = open("data/dag 8. input.txt", "r").read().split("\n")[:-1]
+Input = open("data/dag 08. input.txt", "r").read().split("\n")[:-1]
 trees = [list(map(int, list(line))) for line in Input]
 
 def find_vissible_trees():

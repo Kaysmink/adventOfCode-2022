@@ -1,4 +1,4 @@
-Input = open("data/dag 9. input.txt", "r").read().split("\n")[:-1]
+Input = open("data/dag 09. input.txt", "r").read().split("\n")[:-1]
 motions = [line.split() for line in Input]
     
 def rope(length):

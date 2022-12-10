@@ -1,4 +1,4 @@
-Input = open("data/dag 2. input.txt", "r").read().split("\n")[:-1]
+Input = open("data/dag 02. input.txt", "r").read().split("\n")[:-1]
 hands = [[values for values in line.split(" ")] for line in Input]
 
 mappingOpponnents = {"A": "R", "B": "P", "C": "S"}
