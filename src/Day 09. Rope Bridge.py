@@ -47,16 +47,16 @@ def rope(length):
         new_position = neigbors_idx[[value in possible_positions for value in neigbors_idx].index(True)]
         positions[idx] = new_position
         
-        # add new position of idx 9 if not yet visited
+        # add new position of tail if not yet visited
         if idx == length-1 and new_position not in visited:
             visited.append(new_position)
             
-    
     for direction, steps in motions:
         for step in range(int(steps)):
             move_head(direction)
             check_if_move()
-    print(len(visited))
 
-rope(2)
-rope(10)
+    return len(visited)
+
+print(rope(2))
+print(rope(10))
