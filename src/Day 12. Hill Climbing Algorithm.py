@@ -13,11 +13,10 @@ poss_startpoints = [[x,y] for y in range(0,len(heights)) for x in range(0,len(he
 
 def shortesPath(start, end):
     posRoutes = [[start]]
-    found = False
-    
+
     checked_points = []
     steps = 0
-    while found == False:
+    while True:
         steps = steps + 1
         # if no routes possible return inf
         if posRoutes == []:
@@ -48,7 +47,7 @@ def shortesPath(start, end):
                         checked_points.append(neighbor)
                         newRoute = copy.deepcopy(route)
                         newRoute.append(neighbor)
-                        newPosRoutes.append(copy.deepcopy(newRoute))
+                        newPosRoutes.append(newRoute)
                         if neighbor == end:
                             return steps
         posRoutes = newPosRoutes
