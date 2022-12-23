@@ -29,31 +29,23 @@ def possible_indexes(index, maxValue, minValue, direction):
         possible_index.extend(list(range(maxValue, index-1, -1)))
         
     cycle_list = cycle(possible_index)
-    indexes = []
-    for value in range(steps):
-        indexes.append(next(cycle_list))
+    indexes = [next(cycle_list) for value in range(steps)]
     
     return indexes
 
 def get_new_pos(indexes, currentPos, direction):
     if direction in ["R", "L"]:
         for index, value in enumerate(indexes):
-                if [value, currentPos[1]] in walls:
-                    if index == 0:
-                        new_pos = currentPos
-                    else:
-                        new_pos = [indexes[index-1], currentPos[1]]
-                    break
+            if [value, currentPos[1]] in walls:
+                new_pos = currentPos if index == 0 else [indexes[index-1], currentPos[1]]
+                break
         else:
             new_pos = [indexes[-1], currentPos[1]]
             
     if direction in ["U", "D"]:
         for index, value in enumerate(indexes):
             if [currentPos[0], value] in walls:
-                if index == 0:
-                    new_pos = currentPos
-                else:
-                    new_pos = [currentPos[0], indexes[index-1]]
+                new_pos = currentPos if index == 0 else [currentPos[0], indexes[index-1]]
                 break
         else:
             new_pos = [currentPos[0],indexes[-1]]
